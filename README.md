@@ -1,81 +1,82 @@
 # 🌍 Air Quality Index (AQI) Prediction  
 
-## 📌 Project Overview  
-This project predicts the **Air Quality Index (AQI)** using various air pollutants such as PM2.5, PM10, NO₂, SO₂, CO, Benzene, Toluene, NH₃, and Xylene.  
-The goal is to build a **machine learning-based model** that helps in monitoring and forecasting air quality, which can support decision-making for public health and environmental management.  
+## 📌 Introduction
+Air pollution is a major environmental challenge affecting human health and ecosystems.  
+This project focuses on **analyzing and predicting air quality in India** using pollutant data collected from multiple monitoring stations.
+
+Using **machine learning classification techniques**, the project identifies pollution trends, classifies air quality levels, and highlights high-risk regions to support data-driven decision making.
 
 ---
 
-## 🎯 Objectives  
-- Analyze the effect of different pollutants on AQI.  
-- Perform data cleaning, preprocessing, and exploratory data analysis (EDA).  
-- Apply multiple ML/DL models for AQI prediction.  
-- Evaluate models based on accuracy and error metrics.  
-- Provide a reliable system for forecasting AQI.  
+## 📊 Dataset Description
+- **Records:** 1358
+- **Region:** India
+- **Key Features:**
+  - Location: Country, State, City, Station
+  - Coordinates: Latitude, Longitude
+  - Pollutants: PM10, NH3, OZONE, etc.
+  - Statistics: Minimum, Maximum, Average pollutant levels
+  - Timestamp: Last Update
+
+### 🎯 Target Variable
+`pollutant_avg` categorized into:
+- **Low** (0–50)
+- **Moderate** (50–100)
+- **High** (>100)
 
 ---
 
-## 🛠 Tools & Technologies  
-- **Language:** Python  
-- **Libraries:** NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, XGBoost, TensorFlow/Keras  
-- **Platform:** Jupyter Notebook / Google Colab  
-- **Dataset:** Air Quality Data (CSV file)  
+## 🧹 Data Preprocessing
+- Handled missing values using **mean imputation**
+- Converted date column to **datetime**
+- Encoded categorical features using **Label Encoding**
+- Removed unnecessary columns
+- Split data into **80% training** and **20% testing**
 
 ---
 
-## 🔬 Methodology  
-1. **Data Collection** – Air Quality Dataset (CSV).  
-2. **Data Preprocessing** – Handling missing values, removing duplicates, treating outliers.  
-3. **Exploratory Data Analysis (EDA)** – Visualization of pollutants, correlation heatmaps.  
-4. **Feature Engineering** – Selecting key pollutants impacting AQI.  
-5. **Model Building** –  
-   - Linear Regression  
-   - Decision Tree Regressor  
-   - Random Forest Regressor  
-   - Gradient Boosting  
-   - XGBoost Regressor  
-   - LSTM Neural Network  
-6. **Model Evaluation** – R² Score, MAE, RMSE.  
-7. **Best Model Selection** – XGBoost performed best.  
+## 🤖 Machine Learning Models Implemented
+
+| Algorithm | Accuracy |
+|---------|----------|
+| KNN | 61.4% |
+| SVM | 61.4% |
+| Decision Tree | 73.9% |
+| **Random Forest** | **77.57%** ⭐ |
+| Naive Bayes | 70.22% |
+| Logistic Regression | 51.84% |
+
+✅ **Random Forest** achieved the highest accuracy and performed best overall.
 
 ---
 
-## 📊 Results & Performance  
-| Model            | Accuracy (%) | RMSE   | Processing Time | Complexity |
-|------------------|--------------|--------|-----------------|------------|
-| Random Forest    | ~95%         | ~10–12 | Fast            | Low        |
-| XGBoost          | ~96–97%      | ~8–9   | Fast/Moderate   | Medium     |
-| LSTM Network     | ~94–95%      | ~11–13 | Moderate/Slow   | High       |
-
-✅ **Final Best Model: XGBoost**  
-- **R² Score:** 0.97  
-- **RMSE:** ~9  
+## 📈 Model Evaluation
+- Accuracy Score
+- Precision, Recall, F1-Score
+- Classification Reports
+- Comparison across multiple algorithms
 
 ---
 
-## 🏆 Key Contributions (Improvisations)  
-- Improved dataset quality by handling missing values & outliers.  
-- Selected key pollutant features to boost performance.  
-- Tuned Random Forest & XGBoost hyperparameters to improve accuracy.  
-- Experimented with LSTM for sequential learning.  
-- Suggested future scope: real-time AQI prediction using IoT sensor data.  
+## 📊 Data Visualization
+The project includes:
+- Accuracy comparison bar plot
+- Pollutant average distribution histogram
+- Correlation heatmap
+- Pollutant frequency count plot
+- Geographical scatter plot of monitoring stations
+- Box plots showing pollutant variability and outliers
 
 ---
 
-## 📸 Sample Outputs  
-- Correlation Heatmap between pollutants.  
-- Predicted vs Actual AQI comparison.  
-- Model accuracy results.  
+## 🛠️ Tech Stack
+- **Language:** Python
+- **Libraries:** Pandas, NumPy, Scikit-Learn
+- **Visualization:** Matplotlib, Seaborn
+- **Environment:** Jupyter Notebook
 
 ---
 
-## 📌 Conclusion  
-- Machine learning models can effectively predict AQI from pollutants data.  
-- Ensemble models (**Random Forest & XGBoost**) performed best.  
-- Best results achieved: **97% Accuracy, RMSE ~9**.  
-- Project demonstrates the role of AI/ML in solving real-world environmental problems.  
-
----
 
 ## 🚀 Future Scope  
 - Real-time AQI prediction using IoT sensor data.  
